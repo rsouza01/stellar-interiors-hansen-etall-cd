@@ -1,0 +1,52 @@
+<HTML><HEAD><TITLE>MISC</TITLE></HEAD>
+<BODY>
+<H2>MISC</H2>
+<TABLE><TR>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="../"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.parent.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="../">Parent dir</A></SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="GETKAPPA.F90"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="GETKAPPA.F90">GETKAPPA.F90</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="GETKAPPA.exe"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="GETKAPPA.exe">GETKAPPA.exe</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="cs1970.dat"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="cs1970.dat">cs1970.dat</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+</TR><TR>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="csotest.exe"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="csotest.exe">csotest.exe</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="csotest.for"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="csotest.for">csotest.for</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="geteos.exe"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="geteos.exe">geteos.exe</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="geteos.f90"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="geteos.f90">geteos.f90</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+</TR></TABLE>
+<HR>
+<PRE>
+
+                 MISC
+*******************************************************************
+        "Stellar Interiors," 2nd ed., by Hansen, Kawaler, &amp; Trimble
+**********************************************************************
+
+This directory contains three FORTRAN codes (two in F90) that might be of
+some use. Executable (.exe) files for Windows based PCs are also included.
+These are: 
+1. GETEOS.F90, which computes the pressure and internal energy of a
+gas consisting of an ideal gas plus radiation. It does the Saha equation to
+get ionization. The effects of degeneracy are not included. With a little
+extra work you can also find thermodynamic derivatives. See the program for
+some documentation. The inputs asked for are temperature, specific volume
+(1/density), X and Y (the hydrogen and helium mass fractions). The units are
+cgs (as used in the main text). The outputs are pressure (P) and internal
+energy (E). (A version of this code is used in ZAMS and it is due to Dean
+Pesnell.) 
+2. GETKAPPA.F90, which computes the radiative opacity (a fit to
+Cox-Stewart). The code includes the EOS of GETEOS.F90 because the electron
+pressure is required. See documentation in the code. The inputs are
+temperature, density, X and Y (the hydrogen and helium mass fractions).
+The outputs are Z (metal mass fraction) and opacity. (This code is used in
+ZAMS.) 
+3. CSOTEST.FOR computes Cox-Stewart opacities from a table (CS1970.dat)
+by interpolating in temperature, density, and composition. The inputs are
+log_10 (density), log_10 (temperature), and X and Y. You may wish to compare
+the results from CSOTEST with those from GETKAPPA.
+
+Note that some of you may have to convert the  .f90  FORTRAN into  .for
+or  .f format (i.e., to go to fixed format for older compilers rather than free
+format).
+
+****************************************************************************
+</PRE>
+</BODY></HTML>

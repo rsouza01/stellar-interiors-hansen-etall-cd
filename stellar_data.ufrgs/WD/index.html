@@ -1,0 +1,42 @@
+<HTML><HEAD><TITLE>WD</TITLE></HEAD>
+<BODY>
+<H2>WD</H2>
+<TABLE><TR>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="../"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.parent.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="../">Parent dir</A></SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="WD.FOR"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="WD.FOR">WD.FOR</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="WD.exe"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="WD.exe">WD.exe</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="wd.out"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.file.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="wd.out">wd.out</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>0K</SMALL></TD></TR></TABLE></TD>
+</TR></TABLE>
+<HR>
+<PRE>
+                       WD.FOR
+***************************************************************************
+        "Stellar Interiors," 2nd ed, by Hansen, Kawaler, &amp; Trimble
+***************************************************************************
+The FORTRAN program WD.FOR computes zero-temperature electron white dwarf
+models using the physics of Chapter 3. It integrates the mass and hydrostatic
+equations using the full treatment of degeneracy. We have followed
+Chandrasekhar, "Introduction to Stellar Structure," Chapter XI in setting
+up the problem. The dependent variable is y, which is related to the degeneracy
+parameter x by y**2=x**2+1. This is scaled by y_0 (y at r=0) to yield
+the new dependent variable  phi=y/y_0. The independent variable is radius r
+that appears as the dimensionless variable  eta (and see Chandra for the
+scaling constant).
+        The way to work this code is to specify rho_0 (the central density
+in g/cm**3) and amue (otherwise known as mu_e in the text). The code then
+(hopefully) does the rest.
+        After you do the above, the code integrates the structure equations
+while iterating on an eigenvalue, which the code makes a first guess for.
+When converged, it will write to a file of your choosing, and to the screen,
+the total radius and mass (both in solar units). The file will also list the
+mass (M_r) as a function of radius r. You might compare your results with that
+of Fig 3.7 of the text. The sample output given here is for rho_0=10**6 with
+mu_e=2 (as in pure helium or carbon).
+
+Note that some of you will have to make the trivial change from .for to .f
+for UNIX systems.
+        The directory also contains an executable file for WINDOWS based PCs
+(WD.EXE) and sample output (WD.OUT). Carl Hansen, Sept 03
+*****************************************************************************
+</PRE>
+</BODY></HTML>

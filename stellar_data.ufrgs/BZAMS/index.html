@@ -1,0 +1,67 @@
+<HTML><HEAD><TITLE>BZAMS</TITLE></HEAD>
+<BODY>
+<H2>BZAMS</H2>
+<TABLE><TR>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="../"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.parent.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="../">Parent dir</A></SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="BZAMS1/index.html"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.folder.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="BZAMS1/index.html">BZAMS1/</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>24 files</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="BZAMS2/index.html"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.folder.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="BZAMS2/index.html">BZAMS2/</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>26 files</SMALL></TD></TR></TABLE></TD>
+<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF="BZAMS3/index.html"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=".thumbnails/.folder.gif"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF="BZAMS3/index.html">BZAMS3/</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>27 files</SMALL></TD></TR></TABLE></TD>
+</TR></TABLE>
+
+<PRE>
+                       BZAMS
+****************************************************************************
+
+        "Stellar Interiors," 2nd ed., by Hansen, Kawaler, &amp; Trimble
+****************************************************************************
+This directory contains three versions of a FORTRAN code to make zero-age
+main sequence models. The versions differ only in what equations of state and
+opacities are used. These versions are called BZAMS1, BZAMS2, and BZAMS3,
+and each may be found in the correspondingly named sub-directory. The three
+versions differ as follows:
+        BZAMS1: uses the Stellingwerf fit to Cox-Stewart opacities and the
+                Dean Pesnell equation of state (no electron degeneracy).
+                These are the same routines used in the code ZAMS found
+                in the ZamsPuls directory. Unlike that code, however, BZAMS1
+                does a much better job of constructing an atmosphere to
+                start off integrations. (The same is true for the other
+                BZAMS versions.)
+        BZAMS2: uses a Icko Iben fit to Cox-Stewart opacities and a routine
+                by Faulkner and Eggleton to compute the equation of state. It
+                includes degenerate statistics for electrons.
+        BZAMS2: uses the Pesnell equation of state but reads in, and
+                interpolates, tabulated Cox-Stewart opacities.
+Each version of the code is self-contained as a FORTRAN file but we also
+include individual routines in each sub-directory (for those who want to play
+around and perhaps use make files). We also include Windows PC executable files
+for each version.
+
+Note: We have retained the .for suffix on the FORTRAN files. Those using UNIX
+based systems will probably have to change this to  .f .
+
+        To use the codes, do the following.
+
+From within the sub-directory, have a look at the file "bzams.par."
+This file is the control file for the BZAMS code.  Adjust things like
+the stellar mass, initial composition, and guesses for the starting
+parameters.  A series of lines below the main control lines is not read
+by the code, but has output summaries for a few models to use as you
+wish and to provide guesses.  The columns should be self-evident.  The file
+bzams.par must retain that name  because it is read in by bzams (in any of the
+versions).
+
+        Run bzams by simply typing "bzams1" (or 2 or 3) At the end of the run,
+a few files will be output: a- bzams.sum, a one-line summary of the  model;
+b-  bzams.out, a detailed listing of the model; c- bzams.puls, the model in a
+format to be read by PULS.
+
+        If you are lucky, bzams will converge on a model, and write out files
+for use in PULS.  It will also write out a file called 'first.mod' to
+use as a starting model for an evolution code (which is still being developed).
+
+GOOD LUCK!
+
+***************************************************************************8
+</PRE>
+<HR>
+</BODY></HTML>
